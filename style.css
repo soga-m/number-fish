@@ -1,0 +1,99 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background: #f4fbff;
+    color: #223;
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+.status {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.status span {
+    margin: 0 12px;
+}
+
+#clear-message {
+    height: 28px; /* メッセージが出ても画面がガタつかないよう高さを固定 */
+    font-size: 22px;
+    font-weight: bold;
+    color: #e65100;
+}
+
+/* ゲーム画面（水の中のイメージ） */
+.game {
+    position: relative; /* 中のabsolute要素の基準になる */
+    width: 500px;
+    height: 400px;
+    margin: 0 auto 16px;
+    border: 2px solid #4a90b8;
+    border-radius: 12px;
+    background: linear-gradient(#d8f1ff, #9fd6f5);
+    overflow: hidden;
+}
+
+/* 数字のボール */
+.ball {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px; /* 数字を上下中央にする */
+    font-weight: bold;
+    border-radius: 50%;
+    border: solid 3px skyblue;
+    background: #fff;
+}
+
+.ball1 { top: 150px; left: 300px; }
+.ball2 { top: 60px;  left: 100px; }
+.ball3 { top: 300px; left: 40px;  }
+.ball4 { top: 40px;  left: 400px; }
+.ball5 { top: 280px; left: 380px; }
+
+/* 魚（ボールより手前に表示する） */
+.fish {
+    position: absolute;
+    top: 150px;
+    left: 80px;
+    font-size: 48px;
+    line-height: 1;
+    z-index: 10;
+    cursor: grab;
+}
+
+.fish,
+.ball {
+    user-select: none;
+    -webkit-user-select: none;
+    outline: none;
+    transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+/* 取得済みのボール */
+.ball.collected {
+    background-color: #ffd54f !important;
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+button {
+    margin: 4px;
+    padding: 8px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #4a90b8;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a7a9e;
+}
